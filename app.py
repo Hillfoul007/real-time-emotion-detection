@@ -14,7 +14,7 @@ import requests, zipfile, io, os
 
 @st.cache_resource
 def load_model():
-    url = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+    url = "https://drive.google.com/file/d/1cSKFLMk-qoUDRzDszWf0iPdIAhMrwJdF/view?usp=drive_link"
     zip_path = "face_model.zip"
 
     if not os.path.exists("face_model"):
