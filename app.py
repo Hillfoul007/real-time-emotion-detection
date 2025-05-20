@@ -4,6 +4,7 @@ import av
 import cv2
 import tensorflow as tf
 import numpy as np
+import requests
 import os
 st.title("Real-Time Emotion Detection")
 # Load model
