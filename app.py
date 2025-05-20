@@ -7,21 +7,26 @@ import numpy as np
 
 st.title("Real-Time Emotion Detection")
 # Load model
-import requests
-import os
 
+
+import tensorflow as tf
+import requests, zipfile, io, os
 
 @st.cache_resource
 def load_model():
-    url = "https://drive.google.com/uc?export=download&id=1cSKFLMk-qoUDRzDszWf0iPdIAhMrwJdF"
-    model_path = "face_model.h5"
+    url = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+    zip_path = "face_model.zip"
 
-    if not os.path.exists(model_path):
-        with open(model_path, "wb") as f:
-            response = requests.get(url)
-            f.write(response.content)
+    if not os.path.exists("face_model"):
+        with open(zip_path, "wb") as f:
+            f.write(requests.get(url).content)
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(".")
 
-    return tf.keras.models.load_model(model_path)
+    return tf.keras.models.load_model("face_model")
+
+
+
 
 
 
