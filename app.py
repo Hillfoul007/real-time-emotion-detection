@@ -5,6 +5,7 @@ import cv2
 import tensorflow as tf
 import numpy as np
 
+st.title("Real-Time Emotion Detection")
 # Load model
 @st.cache_resource
 def load_model():
