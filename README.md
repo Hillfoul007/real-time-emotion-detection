@@ -1,63 +1,42 @@
+# Real-Time Emotion Detection
 
-# Real-Time Emotion Detection with Emojis 😄😢😠
+This project detects human emotions in real-time using webcam feed and displays appropriate emojis.
 
-This project is a real-time emotion detection system built using OpenCV, a pre-trained deep learning model (`.h5`), and deployed via Streamlit. It captures facial expressions from webcam input, classifies emotions using a CNN model, and overlays appropriate emojis on the detected faces in real time.
+## Features
 
----
+- Face detection using OpenCV
+- Emotion classification using a trained CNN model (`face_model.h5`)
+- Real-time emoji overlay
+- Web interface powered by Flask
 
-## 📌 Features
+## Setup Instructions
 
-- 🎥 Live webcam feed integration.
-- 🧠 Emotion prediction using a Keras `.h5` model.
-- 😊 Automatic emoji overlay based on detected emotion.
-- 💻 Streamlit interface for quick and easy web deployment.
-- 🧪 Clean and modular code suitable for experimentation and learning.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/real-time-emotion-detection.git
+    cd real-time-emotion-detection
+    ```
 
---
+2. Create and activate virtual environment:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ```
 
-> ⚠️ Make sure your webcam is connected and accessible.
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
----
+4. Run the application:
+    ```bash
+    python app.py
+    ```
 
-## 😎 Supported Emotions
+## Requirements
 
-- **Happy** 😀
-- **Sad** 😢
-- **Angry** 😠
-- **Surprised** 😲
-- **Neutral** 😐
+See `requirements.txt`.
 
----
+## Note
 
-## 🧠 Technologies Used
-
-- **Python 3.11**
-- **Keras / TensorFlow**
-- **OpenCV**
-- **Streamlit**
-- **NumPy**
-- **Pillow (PIL)**
-
----
-
-## 📸 Sample Output
-
-> You can include a sample image or gif here in the `assets/` folder.
-
-```
-![Demo](assets/demo.gif)
-```
-
----
-
-## 🙋‍♂️ Author
-
-**Chaman Kataria**  
-📍 New Delhi, India  
-🔗 [Portfolio](https://chamankataria.netlify.app) • [LinkedIn](https://www.linkedin.com/in/chaman-kataria-b41a2a262/) • [GitHub](https://github.com/hillfoul007)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Do **not** push the `venv` or large model files (`.pyd`, `.dll`, etc.) to GitHub. Use `.gitignore` to exclude them.
