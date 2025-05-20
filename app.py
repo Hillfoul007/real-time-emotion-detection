@@ -7,9 +7,24 @@ import numpy as np
 
 st.title("Real-Time Emotion Detection")
 # Load model
+import requests
+import os
+
+
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("face_model.h5")
+    url = "https://drive.google.com/uc?export=download&id=1cSKFLMk-qoUDRzDszWf0iPdIAhMrwJdF"
+    model_path = "face_model.h5"
+
+    if not os.path.exists(model_path):
+        with open(model_path, "wb") as f:
+            response = requests.get(url)
+            f.write(response.content)
+
+    return tf.keras.models.load_model(model_path)
+
+
+
 
 model = load_model()
 class_names = ['Happy', 'Sad', 'Angry', 'Surprised', 'Neutral', 'Disgusted']
