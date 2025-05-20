@@ -9,37 +9,23 @@ st.title("Real-Time Emotion Detection")
 # Load model
 
 
-import requests, zipfile, io, os
-import tensorflow as tf
-import streamlit as st
-
 @st.cache_resource
 def load_model():
     url = "https://drive.google.com/uc?export=download&id=1cSKFLMk-qoUDRzDszWf0iPdIAhMrwJdF"
-    zip_path = "face_model.zip"
+    model_path = "face_model.h5"
 
-    # Download ZIP only once
-    if not os.path.exists("face_model"):
+    if not os.path.exists(model_path):
         response = requests.get(url)
         if response.status_code == 200:
-            with open(zip_path, "wb") as f:
+            with open(model_path, "wb") as f:
                 f.write(response.content)
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall("face_model")
         else:
-            st.error("Failed to download model zip from Google Drive.")
+            st.error("Failed to download the model from Google Drive.")
             return None
 
-    return tf.keras.models.load_model("face_model")
+    return tf.keras.models.load_model(model_path)
 
 model = load_model()
-
-
-
-
-
-
-
 
 
 class_names = ['Happy', 'Sad', 'Angry', 'Surprised', 'Neutral', 'Disgusted']
