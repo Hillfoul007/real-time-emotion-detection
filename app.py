@@ -12,7 +12,7 @@ def load_model():
     
 
 model = load_model()
-class_names = ['Happy', 'Sad', 'Angry', 'Surprised', 'Neutral', 'Disgusted']
+class_names = ['Happy', 'Sad', 'Fear', 'Angry', 'Surprised', 'Neutral', 'Disgusted']
 
 # Preprocessing function
 def preprocess(frame):
