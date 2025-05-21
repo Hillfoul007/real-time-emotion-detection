@@ -4,31 +4,13 @@ import av
 import cv2
 import tensorflow as tf
 import numpy as np
-import requests
-import os
-st.title("Real-Time Emotion Detection")
+
 # Load model
-
-
 @st.cache_resource
 def load_model():
-    url = "https://drive.google.com/uc?export=download&id=1cSKFLMk-qoUDRzDszWf0iPdIAhMrwJdF"
-    model_path = "face_model.h5"
-
-    if not os.path.exists(model_path):
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open(model_path, "wb") as f:
-                f.write(response.content)
-        else:
-            st.error("Failed to download the model from Google Drive.")
-            return None
-
-    return tf.keras.models.load_model(model_path)
+    return tf.keras.models.load_model("face_model.h5")
 
 model = load_model()
-
-
 class_names = ['Happy', 'Sad', 'Angry', 'Surprised', 'Neutral', 'Disgusted']
 
 # Preprocessing function
