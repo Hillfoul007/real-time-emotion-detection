@@ -1,10 +1,16 @@
 flask==3.1.1
 gunicorn
-streamlit
-streamlit-webrtc
-opencv-python==4.11.0.86
 
-tensorflow==2.19.0
+# Use headless versions to save space (no GUI)
+opencv-python-headless==4.11.0.86
 
+# Use CPU-only TensorFlow (smaller size, no GPU binaries)
+tensorflow-cpu==2.19.0
+
+# Core ML and image libraries
 numpy==1.23.5
 Pillow==10.2.0
+
+# Streamlit + WebRTC
+streamlit==1.35.0
+streamlit-webrtc==0.45.2
