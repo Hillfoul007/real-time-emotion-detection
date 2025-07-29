@@ -1,17 +1,8 @@
-# Web framework
+tensorflow==2.13.0
+opencv-python-headless==4.8.1.78
 flask==2.3.3
 gunicorn==21.2.0
-
-# OpenCV (headless for lightweight builds)
-opencv-python-headless==4.8.1.78
-
-# TensorFlow (CPU only, compatible version)
-tensorflow==2.13.0
-
-# Core dependencies
 numpy==1.23.5
 Pillow==10.2.0
-
-# Streamlit + WebRTC
 streamlit==1.29.0
 streamlit-webrtc==0.45.2
