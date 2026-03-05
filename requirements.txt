@@ -4,4 +4,4 @@ tensorflow==2.13.0
 numpy==1.24.3
 Pillow==10.3.0
 streamlit-webrtc==0.47.1
-av==11.0.0
+av==12.3.0
